@@ -13,17 +13,19 @@ This is the frontend application for the Country Info App, built with Next.js an
 ## Screenshots
 
 ### Home Page
+
 <img src="docs/images/desktop_home.png" alt="Desktop Home Page" width="600"/>
 <img src="docs/images/mobile_home.png" alt="Mobile Home Page" width="300"/>
 
 ### Countries List
+
 <img src="docs/images/desktop_countries.png" alt="Desktop Countries List" width="600"/>
 <img src="docs/images/mobile_countries.png" alt="Mobile Countries List" width="300"/>
 
 ### Country Details
+
 <img src="docs/images/desktop_country.png" alt="Desktop Country Details" width="600"/>
 <img src="docs/images/mobile_country.png" alt="Mobile Country Details" width="300"/>
-
 
 ## Prerequisites
 
@@ -34,20 +36,13 @@ Before you begin, ensure you have the following installed:
 
 ## Getting Started
 
-1. Clone the repository:
-
-   ```
-   git clone https://github.com/your-username/country-info-app-frontend.git
-   cd country-info-app-frontend
-   ```
-
-2. Install dependencies:
+1. Install dependencies:
 
    ```
    npm install
    ```
 
-3. Set up environment variables:
+2. Set up environment variables:
 
    - Copy the `.env.example` file to a new file named `.env.local`:
      ```
@@ -55,13 +50,13 @@ Before you begin, ensure you have the following installed:
      ```
    - Edit `.env.local` and set the `NEXT_PUBLIC_API_URL` to your backend API URL.
 
-4. Run the development server:
+3. Run the development server:
 
    ```
    npm run dev
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
 ## Available Scripts
 

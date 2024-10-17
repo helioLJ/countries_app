@@ -36,14 +36,18 @@ let countriesCache: { [key: string]: { name: string; flagUrl: string } } = {};
 
 export const getCountries = async (): Promise<Country[]> => {
   const response = await api.get("/countries");
-  return response.data.map((country: { name: string; countryCode: string }) => ({
-    name: country.name,
-    countryCode: country.countryCode,
-    flagUrl: `https://flagcdn.com/${country.countryCode.toLowerCase()}.svg`,
-  }));
+  return response.data.map(
+    (country: { name: string; countryCode: string }) => ({
+      name: country.name,
+      countryCode: country.countryCode,
+      flagUrl: `https://flagcdn.com/${country.countryCode.toLowerCase()}.svg`,
+    }),
+  );
 };
 
-export const getCountryInfo = async (countryCode: string): Promise<CountryInfo> => {
+export const getCountryInfo = async (
+  countryCode: string,
+): Promise<CountryInfo> => {
   // Fetch the country list if the cache is empty
   if (Object.keys(countriesCache).length === 0) {
     const countries = await getCountries();
@@ -75,11 +79,13 @@ export const getCountryInfo = async (countryCode: string): Promise<CountryInfo> 
     flagUrl:
       countriesCache[countryCode]?.flagUrl ||
       `https://flagcdn.com/${countryCode.toLowerCase()}.svg`,
-    borderCountries: countryInfo.borderCountries.map((border: BorderCountry) => ({
-      ...border,
-      flagUrl:
-        countriesCache[border.countryCode]?.flagUrl ||
-        `https://flagcdn.com/${border.countryCode.toLowerCase()}.svg`,
-    })),
+    borderCountries: countryInfo.borderCountries.map(
+      (border: BorderCountry) => ({
+        ...border,
+        flagUrl:
+          countriesCache[border.countryCode]?.flagUrl ||
+          `https://flagcdn.com/${border.countryCode.toLowerCase()}.svg`,
+      }),
+    ),
   };
 };
